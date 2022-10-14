@@ -8,13 +8,8 @@ function App () {
   const [list, setList] = useState(things);
 
   const hideItem = (id) => {
-    const listFiltered = list.filter(item => {
-      if (id !== item.id) {
-        return item
-      }
-    });
+    const listFiltered = list.filter(item => id !== item.id);
     setList(listFiltered);
-
   }
 
 
@@ -36,7 +31,7 @@ function App () {
                 <p className="things_text">Конечно, ты можешь самостоятельно придумать способы провести время вместе, но если фантазия неожиданно отказала, воспользуйся этими подсказками.</p>
                 <div className="wrapper">
                   {list.map(element => {
-                    const {id, image, header, descr, stus} = element;
+                    const {id, image, header, descr} = element;
                     return (                      
                     <div className="card" key={id}>
                       <div className="card_img">
