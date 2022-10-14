@@ -27,7 +27,7 @@ function App () {
     <div className="main">
         <div className="container">
             <div className="things">
-                <h1 className="things_header">Как интересно провести время - 10 идей</h1>
+                <h1 className="things_header">Как интересно провести время - {list.length} идей</h1>
                 <p className="things_text">Конечно, ты можешь самостоятельно придумать способы провести время вместе, но если фантазия неожиданно отказала, воспользуйся этими подсказками.</p>
                 <div className="wrapper">
                   {list.map(element => {
