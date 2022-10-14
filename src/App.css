@@ -1,38 +1,303 @@
-.App {
-  text-align: center;
+html {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  word-wrap: break-word;
+  position: relative;
+  background: url('../public/img/bg/bg.png');
+  overflow-y: scroll;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main::before {
+  content: '';
+  width: 10%;
+  max-width: 100px;
+  height: 100vh;
+  min-height: 100%;
+  background-color: rgba(153, 95, 95, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -200;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main::after {
+  content: '';
+  width: 10%;
+  max-width: 100px;
+  height: 100vh;
+  min-height: 100%;
+  background-color: rgba(153, 95, 95, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -200;
+}
+
+html,
+button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::selection {
+	background-color: rgb(68, 73, 65, 0.5);
+}
+
+.main {
+  margin: 0;
+}
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.things {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.things_header {
+  margin: 15px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 26px;
+  color: rgb(153, 95, 95);
+}
+
+.things_text {
+  margin: 5px 15px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgb(83, 83, 83);
+}
+
+.card {
+  margin: 50px 50px 0;
+  width: 500px;
+  height: 500px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  overflow: hidden;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: rgb(153, 95, 95);
+}
+
+button:hover {
+  background-color: rgb(184, 181, 181);
+}
+
+.card_btn {
+  padding: 10px 40px;
+  align-self: flex-end;
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+.card_descr {
+  padding: 20px;
+}
+
+.card_header {
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #000000;
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+.card_text {
+  margin: 0px;
+  padding: 0 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+  background-color: rgba(256, 256, 256, 0.5);
+}
+
+.hide_btn {
+  margin: 50px auto;
+  padding: 20px;
+  width: 500px;
+  align-self: stretch;
+  display: block;
+}
+
+@media all and (max-width: 600px) {
+  
+  .main::before {
+    width: 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .main::after {
+    width: 0;
+  }
+    
+  .things_header {
+    margin: 15px 5px;
+    font-size: 25px;
+  }
+  
+  .things_text {
+    margin: 5px 30px;
+    padding: 0;
+    letter-spacing: 1px;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .card {
+    margin: 30px 20px 0;
+    width: 400px;
+    height: 400px;
+  }
+  
+  .card_header {
+    /* margin-bottom: 10px; */
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+  
+  .hide_btn {
+    width: 400px;
+  }
+}
+
+@media all and (max-width: 450px) {
+  
+  .things_header {
+    /* margin: 15px 5px; */
+    letter-spacing: initial;
+    font-size: 20px;
+  }
+  
+  
+  .things_text {
+    margin: 5px 15px;
+    /* padding: 0; */
+    /* letter-spacing: 1px; */
+    font-size: 14px;
+  }
+
+  .card {
+    margin: 30px 10px 0;
+    width: 300px;
+    height: 300px;
+  }
+  
+  button {
+    font-size: 14px;
+  }
+  
+  /* .card_btn {
+    padding: 10px 40px;
+  } */
+  
+  .card_descr {
+    padding: 10px;
+  }
+  
+  .card_header {
+    /* margin-bottom: 10px; */
+    letter-spacing: initial;
+    font-size: 16px;
+  }
+  
+  .card_text {
+    padding: 0 5px;
+    font-size: 14px;
+  }
+  
+  .hide_btn {
+    margin: 30px auto;
+    padding: 15px;
+    width: 300px;
+  }
+}
+
+@media all and (max-width: 330px) {
+  
+  .things_header {
+    font-size: 16px;
+  }
+  
+  
+  .things_text {
+    margin: 10px;
+    /* padding: 0; */
+    letter-spacing: initial;
+    font-size: 13px;
+  }
+
+  .card {
+    margin: 30px 10px 0;
+    width: 250px;
+    height: 250px;
+  }
+  
+  button {
+    font-size: 12px;
+  }
+  
+  .card_btn {
+    padding: 8px 30px;
+  }
+  
+  .card_descr {
+    padding: 5px;
+  }
+  
+  .card_header {
+    /* margin-bottom: 5px; */
+    font-size: 12px;
+  }
+  
+  .card_text {
+    padding: 0;
+    font-size: 13px;
+  }
+  
+  .hide_btn {
+    margin: 30px auto;
+    padding: 15px;
+    width: 250px;
   }
 }
